@@ -19,3 +19,8 @@ app = FastAPI(title="Book Catalog API (Async + aiosqlite)", lifespan=lifespan)
 @app.post("/books/", response_model=schemas.BookRead, status_code=201)
 async def create_book(book: schemas.BookCreate, db: AsyncSession = Depends(get_db)):
     return await crud.create_book(db, book)
+
+
+@app.get("/books/", response_model=list[schemas.BookRead])
+async def list_books(db: AsyncSession = Depends(get_db)):
+    return await crud.get_all_books(db)
