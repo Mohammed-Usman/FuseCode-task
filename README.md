@@ -53,8 +53,7 @@ fusecode-task/
 
 ```bash
 uv venv
-source .venv/bin/activate  # or .venv\Scripts\activate on Windows
-uv pip install -e .[test]
+uv pip install -r requirements.txt
 ```
 
 ---
