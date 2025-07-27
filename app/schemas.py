@@ -7,3 +7,14 @@ class BookBase(BaseModel):
     author: str
     published_year: int = Field(..., ge=1450, le=2100)
     summary: Optional[str] = None
+
+
+class BookCreate(BookBase):
+    pass
+
+
+class BookRead(BookBase):
+    id: int
+
+    class Config:
+        orm_mode = True
