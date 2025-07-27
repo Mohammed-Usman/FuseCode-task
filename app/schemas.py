@@ -16,5 +16,8 @@ class BookCreate(BookBase):
 class BookRead(BookBase):
     id: int
 
-    class Config:
-        orm_mode = True
+    model_config = {"from_attributes": True}
+
+
+class BookUpdate(BookBase):
+    pass
